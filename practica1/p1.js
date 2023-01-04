@@ -1,4 +1,5 @@
 
+//Se crea nodo
 class Node {
   constructor(value, next) {
     this.value = value;
@@ -6,11 +7,13 @@ class Node {
   }
 }
 
+//Se crea la lista linkeada
 class LinkedList {
   constructor() {
     this.head = null;
   }
   
+  //Se inserta un nodo
   insertNode(value) {
     const newNode = new Node(value, null);
     if (this.head === null) {
@@ -24,6 +27,7 @@ class LinkedList {
     }
   }
 
+  //Se imprime o muestra nodo
   print(){
     let current = this.head;
     while (current) {
@@ -32,6 +36,7 @@ class LinkedList {
     }
   }
 
+  //Se borra un nodo
   deleteNode(value) {
     if (this.head.value === value) {
       this.head = this.head.next;
@@ -47,6 +52,7 @@ class LinkedList {
     }
   }
 
+  //Buscar un nodo
   findNode(value) {
     let current = this.head;
     while (current) {
@@ -59,9 +65,14 @@ class LinkedList {
   }
 }
 
+//Sr crea la lista linkeada
 const linkedList = new LinkedList();
 linkedList.insertNode(12);
 linkedList.insertNode(99);
 linkedList.insertNode(37);
+
+//Se imprimen todos los nodos
 linkedList.print();
+
+//Se busca el nodo que tenga el elemto 37
 console.log(linkedList.findNode(37));
